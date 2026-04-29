@@ -46,23 +46,23 @@ AI Code Review Agent is a production-inspired system that leverages Large Langua
 - Ready for Git integration (PR automation)
 
 ---
-
 ## 🏗️ Architecture
+
+```text
 Client Request
-│
-▼
-Orchestrator
-│
-┌────┼────┬────┬────┐
-▼ ▼ ▼ ▼
-Analyzer Generator Validator RiskAgent
-│
-▼
-RAG
-│
-▼
-Code Knowledge Base
----
+      |
+      ▼
+Orchestrator (Core Controller)
+      |
+  ┌───┬───┬───┬───┬───┐
+  ▼   ▼   ▼   ▼   ▼
+Analyzer Generator Validator RiskAgent Reviewer
+  |
+  ▼
+RAG (Vector DB)
+  |
+  ▼
+Code Rules / Knowledge Base
 
 ## ⚙️ Tech Stack
 

@@ -46,23 +46,27 @@ AI Code Review Agent is a production-inspired system that leverages Large Langua
 - Ready for Git integration (PR automation)
 
 ---
+
 ## 🏗️ Architecture
 
-```text
+```
 Client Request
-      |
+      │
       ▼
-Orchestrator (Core Controller)
-      |
-  ┌───┬───┬───┬───┬───┐
-  ▼   ▼   ▼   ▼   ▼
-Analyzer Generator Validator RiskAgent Reviewer
-  |
-  ▼
-RAG (Vector DB)
-  |
-  ▼
-Code Rules / Knowledge Base
+Orchestrator
+      │
+ ┌────┼────┬────┬────┐
+ ▼    ▼    ▼    ▼
+Analyzer Generator Validator RiskAgent
+      │
+      ▼
+     RAG
+      │
+      ▼
+ Code Knowledge Base
+```
+
+---
 
 ## ⚙️ Tech Stack
 
@@ -75,33 +79,65 @@ Code Rules / Knowledge Base
 
 ## 🚀 Getting Started
 
-1. Install dependencies
-```bash
+### 1. Install dependencies
+```
 pip install -r requirements.txt
-2. Run server
+```
+
+### 2. Run server
+```
 uvicorn app.main:app --reload
-3. Call API
+```
+
+### 3. Call API
+```
 POST /run?repo_path=your_project_path
-📊 Example Output
+```
+
+---
+
+## 📊 Example Output
+
+```
 [
   {
     "file": "example.py",
     "fix": "# refactored code here"
   }
 ]
-📈 Performance (Experimental)
-Metric	Improvement
-Code review effort	↓ 60%
-Tech debt handling	↑ 3x
-Bug detection rate	↑ 2x
-🔮 Roadmap
- FAISS-based RAG
- Multi-language support (Java / Go)
- GitHub PR auto-creation
- CI/CD integration
- Web UI dashboard
-💡 Design Highlights
-LLM as execution engine
-Multi-agent architecture
-RAG-enhanced reasoning
-Designed for real-world workflows
+```
+
+---
+
+## 📈 Performance (Experimental)
+
+| Metric | Improvement |
+|------|------------|
+| Code review effort | ↓ 60% |
+| Tech debt handling | ↑ 3x |
+| Bug detection rate | ↑ 2x |
+
+---
+
+## 🔮 Roadmap
+
+- [ ] FAISS-based RAG
+- [ ] Multi-language support (Java / Go)
+- [ ] GitHub PR auto-creation
+- [ ] CI/CD integration
+- [ ] Web UI dashboard
+
+---
+
+## 💡 Design Highlights
+
+- LLM as execution engine  
+- Multi-agent architecture  
+- RAG-enhanced reasoning  
+- Designed for real-world workflows  
+
+---
+
+## 📄 License
+
+MIT
